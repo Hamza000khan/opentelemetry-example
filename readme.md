@@ -10,6 +10,8 @@ Running the app
 
 $ flask run or Python3 app.py
 
+# docker
+
 Stay in touch
 Author - Hamza Khan
 Website - https://hamza-portfolio-24af2.firebaseapp.com/
