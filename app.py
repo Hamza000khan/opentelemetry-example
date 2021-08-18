@@ -12,7 +12,7 @@ from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
 
 resource = Resource(attributes={
-    "service.name": "server 2"
+    "service.name": "Example server"
 })
 
 trace.set_tracer_provider(TracerProvider(resource=resource))
