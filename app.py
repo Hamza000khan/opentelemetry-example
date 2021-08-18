@@ -3,7 +3,9 @@ import requests
 
 from opentelemetry import trace
 from opentelemetry.instrumentation.flask import FlaskInstrumentor
-from opentelemetry.exporter.jaeger.thrift import JaegerExporter
+from opentelemetry.exporter.jaeger.thrift import JaegerExporter  # to export to jaeger
+
+# for otlp official exporter
 from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExporter
 from opentelemetry.sdk.resources import Resource
 
@@ -17,6 +19,8 @@ resource = Resource(attributes={
 
 trace.set_tracer_provider(TracerProvider(resource=resource))
 tracer = trace.get_tracer(__name__)
+
+# Initiation of the exporter object
 otlp_exporter = OTLPSpanExporter(
     endpoint="http://0.0.0.0:55680",
 )
